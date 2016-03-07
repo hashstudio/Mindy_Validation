@@ -1,0 +1,29 @@
+{
+    "name": "hindy/validation",
+    "homepage": "https://github.com/hashstudio/Mindy_Validation",
+    "version": "0.1.4.3",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mindy\\Validation\\": "src/Mindy/Validation"
+        }
+    },
+    "require": {
+        "php": ">=5.4",
+        "hindy/exception": "0.*",
+        "hindy/locale": "0.*",
+        "hindy/helper": "0.*"
+    },
+    "require-dev": {
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "authors": [{
+        "name": "Maxim Falaleev",
+        "email": "max@studio107.ru",
+        "homepage": "http://studio107.ru",
+        "role": "Developer"
+    }],
+    "support": {
+        "issues": "https://github.com/hashstudio/Mindy_Validation/issues?state=open"
+    }
+}
