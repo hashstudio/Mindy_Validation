@@ -1,7 +1,7 @@
 {
     "name": "hindy/validation",
     "homepage": "https://github.com/hashstudio/Mindy_Validation",
-    "version": "0.1.4.3",
+    "version": "0.1.4.4",
     "license": "MIT",
     "autoload": {
         "psr-4": {
