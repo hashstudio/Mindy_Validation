@@ -69,10 +69,19 @@ class FileValidator extends Validator
         $model = $this->getModel();
         if (is_array($value)) {
             $v = $model ? $model->{$this->name}->getValue() : null;
-            if (
-                (empty($v) && $value['error'] != UPLOAD_ERR_OK) ||
-                (!$this->null && $value['error'] == UPLOAD_ERR_NO_FILE)
-            ) {
+            $hasErrors = false;
+            if ($value['error'] != UPLOAD_ERR_OK) {
+                if ($value['error'] == UPLOAD_ERR_NO_FILE) {
+                    if (empty($v) && $this->null === false) {
+                        $hasErrors = true;
+                    } else {
+                        $hasErrors = false;
+                    }
+                } else {
+                    $hasErrors = true;
+                }
+            }
+            if ($hasErrors) {
                 $this->addError($t->t('validation', $this->codeToMessage($value['error'])));
             }
 
